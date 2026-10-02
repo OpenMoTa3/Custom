@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<org.appdevforall.codeonthego.layouteditor.editor.palette.layouts.LinearLayoutDesign
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <org.appdevforall.codeonthego.layouteditor.editor.palette.text.TextInputLayoutDesign
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp">
+
+        <org.appdevforall.codeonthego.layouteditor.editor.palette.text.TextInputEditTextDesign
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="项目名称" />
+
+    </org.appdevforall.codeonthego.layouteditor.editor.palette.text.TextInputLayoutDesign>
+
+    <org.appdevforall.codeonthego.layouteditor.editor.palette.text.TextInputLayoutDesign
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp">
+
+        <org.appdevforall.codeonthego.layouteditor.editor.palette.text.TextInputEditTextDesign
+            android:id="@+id/packages"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="包名，例如 org.example.app" />
+
+    </org.appdevforall.codeonthego.layouteditor.editor.palette.text.TextInputLayoutDesign>
+
+    <org.appdevforall.codeonthego.layouteditor.editor.palette.text.TextInputLayoutDesign
+        android:id="@+id/language_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:hint="语言"
+        app:endIconMode="dropdown_menu">
+
+        <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+            android:id="@+id/language"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="false"
+            android:inputType="none" />
+
+    </org.appdevforall.codeonthego.layouteditor.editor.palette.text.TextInputLayoutDesign>
+
+    <org.appdevforall.codeonthego.layouteditor.editor.palette.text.TextInputLayoutDesign
+        android:id="@+id/min_sdk_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:hint="最低 Android 版本 (minSdk)"
+        app:endIconMode="dropdown_menu">
+
+        <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+            android:id="@+id/min_sdk"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="false"
+            android:inputType="none" />
+
+    </org.appdevforall.codeonthego.layouteditor.editor.palette.text.TextInputLayoutDesign>
+
+    <androidx.appcompat.widget.AppCompatCheckBox
+        android:id="@+id/include_ndk"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="包含原生 C/C++ 库 (NDK)"
+        android:visibility="gone" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/create"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="创建项目" />
+
+</org.appdevforall.codeonthego.layouteditor.editor.palette.layouts.LinearLayoutDesign>

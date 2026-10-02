@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<org.appdevforall.codeonthego.layouteditor.editor.palette.layouts.LinearLayoutDesign
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:gravity="center">
+
+	<com.google.android.material.card.MaterialCardView
+		android:id="@+id/textview"
+		android:layout_height="200dp"
+		android:layout_width="match_parent"
+		app:cardBackgroundColor="#FFFFFFFF"
+		app:cardCornerRadius="16dp"
+		android:layout_margin="16dp" />
+
+</org.appdevforall.codeonthego.layouteditor.editor.palette.layouts.LinearLayoutDesign>

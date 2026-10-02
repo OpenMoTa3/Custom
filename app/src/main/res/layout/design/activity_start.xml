@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<org.appdevforall.codeonthego.layouteditor.editor.palette.containers.BottomAppBarDesign
+	android:id="@+id/bottomappbar"
+	android:layout_height="wrap_content"
+	android:layout_width="match_parent">
+
+	<org.appdevforall.codeonthego.layouteditor.editor.palette.containers.NavigationViewDesign
+		android:id="@+id/navigationview"
+		android:layout_height="wrap_content"
+		android:layout_width="100dp"
+		android:layout_marginLeft="288.5614dp"
+		android:layout_marginTop="19.911112dp" />
+
+	<org.appdevforall.codeonthego.layouteditor.editor.palette.containers.BottomNavigationViewDesign
+		android:id="@+id/bottomnavigationview"
+		android:layout_height="wrap_content"
+		android:layout_width="match_parent"
+		android:layout_marginLeft="287.06433dp"
+		android:layout_marginTop="19.911112dp" />
+
+</org.appdevforall.codeonthego.layouteditor.editor.palette.containers.BottomAppBarDesign>
