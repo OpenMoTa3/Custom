@@ -39,6 +39,7 @@ public class DownloadUtils {
 			return true;
 
 		} catch (Exception e) {
+            System.out.println(e);
 			return false;
 		} finally {
 			try {

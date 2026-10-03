@@ -76,8 +76,18 @@ android {
         viewBinding = true
         
     }
-    
-    
+    packaging {
+        resources {
+            excludes += setOf(
+                "META-INF/AL2.0",
+                "META-INF/LGPL2.1",
+                "META-INF/ASL2.0",
+                "META-INF/DEPENDENCIES",
+                "META-INF/versions/**",
+                "META-INF/*.md",
+            )
+        }
+    }
 }
 
 tasks.withType<JavaCompile> {
@@ -95,10 +105,10 @@ dependencies {
     implementation(libs.termux.terminal.view)
     implementation(libs.termux.terminal.emulator)
     implementation("io.github.Rosemoe.sora-editor:editor:+")
-   // implementation("com.android.tools.build:manifest-merger:32.5.0-alpha08")
+    implementation("com.android.tools.build:manifest-merger:32.5.0-alpha08")
     implementation("org.dom4j:dom4j:2.2.0")
     implementation("org.yaml:snakeyaml:2.7")
     implementation("org.apache.commons:commons-compress:1.28.0")
-  //  implementation("org.tukaani:xz:+")
+    implementation("org.tukaani:xz:+")
     implementation("cn.tiecode:tiecode-compiler:4.7.0-preview8")
 }
