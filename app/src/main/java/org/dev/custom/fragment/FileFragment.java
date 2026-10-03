@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 
+import java.io.File;
 import org.dev.custom.R;
 import org.dev.custom.activity.EditorActivity;
 import org.dev.custom.adapter.FileAdapter;
@@ -31,7 +32,7 @@ public class FileFragment extends Fragment {
             @NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         ffb = FragmentFileBinding.inflate(inflater, container, false);
         ffb.projectFile.setLayoutManager(new LinearLayoutManager(getActivity()));
-        ffb.projectFile.setAdapter(new FileAdapter());
+        ffb.projectFile.setAdapter(new FileAdapter(new File(getActivity().getIntent().getStringExtra("projectPath"))));
         return ffb.getRoot();
     }
 

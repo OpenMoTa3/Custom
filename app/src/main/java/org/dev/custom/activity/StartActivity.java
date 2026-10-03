@@ -10,6 +10,8 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.provider.Settings;
 import android.util.Log;
+import android.view.View;
+import android.webkit.DownloadListener;
 import java.io.File;
 import java.lang.reflect.Executable;
 import java.util.concurrent.Executor;
@@ -54,6 +56,15 @@ public class StartActivity extends Activity {
                 });
         asb.install.setOnClickListener(
                 (v) -> {
+                    asb.process.setVisibility(View.VISIBLE);
+                    DownloadUtils.setProcessListener(
+                            (current, totul) -> {
+                                runOnUiThread(
+                                        () -> {
+                                            asb.process.setMax(totul);
+                                            asb.process.setProgress(current);
+                                        });
+                            });
                     ExecutorService es = Executors.newFixedThreadPool(8);
                     es.execute(
                             () -> {
@@ -61,10 +72,12 @@ public class StartActivity extends Activity {
                                         PathUtils.dataURL, PathUtils.packageData)) {
                                     if (FileUtils.unCompress(
                                             FilePathUtils.packageData, FilePathUtils.data)) {
+                                                FilePathUtils.packageData.delete();
                                         try {
                                             FilePathUtils.isInstall.createNewFile();
                                         } catch (Exception err) {
                                         }
+                                        DownloadUtils.setProcessListener(null);
                                         intoMain();
                                     }
                                 }
@@ -75,9 +88,9 @@ public class StartActivity extends Activity {
     }
 
     public void intoMain() {
-
-        if (checkPermission() ==true& isInstall()==true) {
+        if (checkPermission() == true & isInstall() == true) {
             startActivity(new Intent(this, MainActivity.class));
+            finish();
         }
     }
 

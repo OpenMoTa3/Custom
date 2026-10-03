@@ -1,7 +1,7 @@
 {
   "allFiles": [
     {
-      "file": "/storage/emulated/0/CodeOnTheGoProjects/Custom/app/src/main/java/org/dev/custom/util/FileUtils.java",
+      "file": "/storage/emulated/0/CodeOnTheGoProjects/Custom/app/src/main/java/org/dev/custom/adapter/FileAdapter.java",
       "selection": {
         "end": {
           "column": 0,
@@ -16,37 +16,7 @@
       }
     },
     {
-      "file": "/storage/emulated/0/CodeOnTheGoProjects/Custom/app/build.gradle.kts",
-      "selection": {
-        "end": {
-          "column": 62,
-          "index": 2945,
-          "line": 110
-        },
-        "start": {
-          "column": 20,
-          "index": 2903,
-          "line": 110
-        }
-      }
-    },
-    {
-      "file": "/storage/emulated/0/CodeOnTheGoProjects/Custom/app/src/main/java/org/dev/custom/activity/StartActivity.java",
-      "selection": {
-        "end": {
-          "column": 47,
-          "index": 2098,
-          "line": 59
-        },
-        "start": {
-          "column": 47,
-          "index": 2098,
-          "line": 59
-        }
-      }
-    },
-    {
-      "file": "/storage/emulated/0/CodeOnTheGoProjects/Custom/app/src/main/java/org/dev/custom/util/FilePathUtils.java",
+      "file": "/storage/emulated/0/CodeOnTheGoProjects/Custom/app/src/main/res/layout/adapter_card_file.xml",
       "selection": {
         "end": {
           "column": 0,
@@ -62,5 +32,5 @@
     }
   ],
   "projectPath": "/storage/emulated/0/CodeOnTheGoProjects/Custom",
-  "selectedFile": "/storage/emulated/0/CodeOnTheGoProjects/Custom/app/src/main/java/org/dev/custom/util/FilePathUtils.java"
+  "selectedFile": "/storage/emulated/0/CodeOnTheGoProjects/Custom/app/src/main/res/layout/adapter_card_file.xml"
 }

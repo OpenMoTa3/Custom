@@ -11,16 +11,19 @@ import androidx.recyclerview.widget.RecyclerView.ViewHolder;
 import java.io.File;
 import org.dev.custom.R;
 import org.dev.custom.activity.EditorActivity;
+import org.dev.custom.databinding.AdapterCardFileBinding;
 
 public class FileAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
-    File[] projectFile;
-    public FileAdapter() {
-        
+    File[] projectPath;
+    public FileAdapter(File pp) {
+        projectPath=pp.listFiles();
     }
 
     @Override
     public int getItemCount() {
-        return 100;
+        if(projectPath!=null)
+        return projectPath.length;
+        return 0;
     }
 
     @Override
@@ -31,7 +34,10 @@ public class FileAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {}
+    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+        AdapterCardFileBinding acfb=AdapterCardFileBinding.bind(holder.itemView);
+        acfb.textView.setText(projectPath[position].getAbsolutePath());
+    }
 
     public class FileCard extends RecyclerView.ViewHolder {
         public FileCard(View v,Context c) {
