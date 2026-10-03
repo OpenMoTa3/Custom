@@ -17,7 +17,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import org.dev.custom.activity.EditorActivity;
 import org.dev.custom.adapter.ProjectAdapter;
-import org.dev.custom.viewmodel.HomeViewModel;
 import org.dev.custom.databinding.FragmentHomeBinding;
 import org.dev.custom.R;
 

@@ -14,14 +14,27 @@ import org.dev.custom.databinding.ActivityStartBinding;
 
 public class StartActivity extends Activity {
     ActivityStartBinding asb;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         init();
     }
-public void init() {
-	asb=ActivityStartBinding.inflate(getLayoutInflater());
-setContentView(asb.getRoot());
-startActivity(new Intent(this,MainActivity.class));
-}
+
+    public void init() {
+        asb = ActivityStartBinding.inflate(getLayoutInflater());
+        setContentView(asb.getRoot());
+        startActivity(new Intent(this, MainActivity.class));
+        asb.notify.setOnClickListener((v) -> {});
+
+        asb.storage.setOnClickListener((v) -> {});
+
+        asb.apkInstall.setOnClickListener(
+                (v) -> {
+                    startActivity(
+                            new Intent(Settings.ACTION_MANAGE_UNKNOWN_APP_SOURCES)
+                                    .setData(Uri.parse("package:" + getPackageName())));
+                });
+        asb.install.setOnClickListener((v) -> {});
+    }
 }

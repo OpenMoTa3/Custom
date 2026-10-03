@@ -1,21 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
-<org.appdevforall.codeonthego.layouteditor.editor.palette.containers.BottomAppBarDesign
-	android:id="@+id/bottomappbar"
-	android:layout_height="wrap_content"
-	android:layout_width="match_parent">
+<org.appdevforall.codeonthego.layouteditor.editor.palette.layouts.LinearLayoutDesign
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+>
 
-	<org.appdevforall.codeonthego.layouteditor.editor.palette.containers.NavigationViewDesign
-		android:id="@+id/navigationview"
-		android:layout_height="wrap_content"
-		android:layout_width="100dp"
-		android:layout_marginLeft="288.5614dp"
-		android:layout_marginTop="19.911112dp" />
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_view"
+        android:layout_height="600dp"
+        android:layout_width="300dp"
+        app:cardCornerRadius="32dp"
+    >
+        <org.appdevforall.codeonthego.layouteditor.editor.palette.layouts.LinearLayoutDesign
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:gravity="center_vertical"
+        >
+        <org.appdevforall.codeonthego.layouteditor.editor.palette.layouts.LinearLayoutDesign
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:orientation="horizontal">
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:layout_margin="8dp"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:text="授予通知权限"
+                />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/notify"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_margin="8dp"
+                    android:layout_weight="1"
+                    android:text="授予" />
+            </org.appdevforall.codeonthego.layouteditor.editor.palette.layouts.LinearLayoutDesign>
+            <org.appdevforall.codeonthego.layouteditor.editor.palette.layouts.LinearLayoutDesign
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:orientation="horizontal">
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:layout_margin="8dp"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:text="授予存储权限"
+                />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/storage"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_margin="8dp"
+                    android:layout_weight="1"
+                    android:text="授予" />
+            </org.appdevforall.codeonthego.layouteditor.editor.palette.layouts.LinearLayoutDesign>
+            <org.appdevforall.codeonthego.layouteditor.editor.palette.layouts.LinearLayoutDesign
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:orientation="horizontal">
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:layout_margin="8dp"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:text="授予APK安装权限"
+                />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/apk_install"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_margin="8dp"
+                    android:layout_weight="1"
+                    android:text="授予" />
+            </org.appdevforall.codeonthego.layouteditor.editor.palette.layouts.LinearLayoutDesign>
+            <com.google.android.material.button.MaterialButton
+                    android:id="@+id/install"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginTop="64dp"
+                    android:text="下载并安装数据包" />
+        </org.appdevforall.codeonthego.layouteditor.editor.palette.layouts.LinearLayoutDesign>
+    </com.google.android.material.card.MaterialCardView>
 
-	<org.appdevforall.codeonthego.layouteditor.editor.palette.containers.BottomNavigationViewDesign
-		android:id="@+id/bottomnavigationview"
-		android:layout_height="wrap_content"
-		android:layout_width="match_parent"
-		android:layout_marginLeft="287.06433dp"
-		android:layout_marginTop="19.911112dp" />
-
-</org.appdevforall.codeonthego.layouteditor.editor.palette.containers.BottomAppBarDesign>
+</org.appdevforall.codeonthego.layouteditor.editor.palette.layouts.LinearLayoutDesign>
