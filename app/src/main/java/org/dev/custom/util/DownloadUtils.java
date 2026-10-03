@@ -31,7 +31,7 @@ public class DownloadUtils {
 				parent.mkdirs();
 
 			fos = new FileOutputStream(f);
-			byte[] buffer = new byte[6144];
+			byte[] buffer = new byte[8192];
 			int len;
 			while ((len = is.read(buffer)) != -1) {
 				fos.write(buffer, 0, len);

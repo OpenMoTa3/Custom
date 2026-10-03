@@ -18,6 +18,7 @@ import java.util.concurrent.Executors;
 import org.dev.custom.databinding.ActivityStartBinding;
 import org.dev.custom.util.DownloadUtils;
 import org.dev.custom.util.FilePathUtils;
+import org.dev.custom.util.FileUtils;
 import org.dev.custom.util.PathUtils;
 
 public class StartActivity extends Activity {
@@ -53,25 +54,29 @@ public class StartActivity extends Activity {
                 });
         asb.install.setOnClickListener(
                 (v) -> {
-                    ExecutorService es=Executors.newFixedThreadPool(8);
-                    es.execute(()->{
-                    if (DownloadUtils.download(PathUtils.dataURL, PathUtils.packageData)) {
-                        try {
-                        	FilePathUtils.isInstall.createNewFile();
-                        } catch(Exception err) {
-                        	
-                        }
-                        intoMain();
-                    }
-                    });
+                    ExecutorService es = Executors.newFixedThreadPool(8);
+                    es.execute(
+                            () -> {
+                                if (DownloadUtils.download(
+                                        PathUtils.dataURL, PathUtils.packageData)) {
+                                    if (FileUtils.unCompress(
+                                            FilePathUtils.packageData, FilePathUtils.data)) {
+                                        try {
+                                            FilePathUtils.isInstall.createNewFile();
+                                        } catch (Exception err) {
+                                        }
+                                        intoMain();
+                                    }
+                                }
+                            });
                     es.shutdown();
                 });
         intoMain();
     }
 
     public void intoMain() {
-        
-        if (checkPermission() == isInstall()) {
+
+        if (checkPermission() ==true& isInstall()==true) {
             startActivity(new Intent(this, MainActivity.class));
         }
     }

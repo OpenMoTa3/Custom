@@ -1,7 +1,7 @@
 {
   "allFiles": [
     {
-      "file": "/storage/emulated/0/CodeOnTheGoProjects/Custom/app/src/main/java/org/dev/custom/activity/SettingsActivity.java",
+      "file": "/storage/emulated/0/CodeOnTheGoProjects/Custom/app/src/main/java/org/dev/custom/util/FileUtils.java",
       "selection": {
         "end": {
           "column": 0,
@@ -12,6 +12,21 @@
           "column": 0,
           "index": 0,
           "line": 0
+        }
+      }
+    },
+    {
+      "file": "/storage/emulated/0/CodeOnTheGoProjects/Custom/app/build.gradle.kts",
+      "selection": {
+        "end": {
+          "column": 62,
+          "index": 2945,
+          "line": 110
+        },
+        "start": {
+          "column": 20,
+          "index": 2903,
+          "line": 110
         }
       }
     },
@@ -19,29 +34,14 @@
       "file": "/storage/emulated/0/CodeOnTheGoProjects/Custom/app/src/main/java/org/dev/custom/activity/StartActivity.java",
       "selection": {
         "end": {
-          "column": 44,
-          "index": 1923,
+          "column": 47,
+          "index": 2098,
           "line": 59
         },
         "start": {
-          "column": 44,
-          "index": 1923,
+          "column": 47,
+          "index": 2098,
           "line": 59
-        }
-      }
-    },
-    {
-      "file": "/storage/emulated/0/CodeOnTheGoProjects/Custom/app/src/main/java/org/dev/custom/util/PathUtils.java",
-      "selection": {
-        "end": {
-          "column": 147,
-          "index": 423,
-          "line": 6
-        },
-        "start": {
-          "column": 147,
-          "index": 423,
-          "line": 6
         }
       }
     },
