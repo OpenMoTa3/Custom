@@ -109,6 +109,6 @@ dependencies {
     implementation("org.dom4j:dom4j:2.2.0")
     implementation("org.yaml:snakeyaml:2.7")
     implementation("org.apache.commons:commons-compress:1.28.0")
-    implementation("org.tukaani:xz:+")
+    //implementation("org.tukaani:xz:+")
     implementation("cn.tiecode:tiecode-compiler:4.7.0-preview8")
 }

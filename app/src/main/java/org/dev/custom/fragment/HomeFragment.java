@@ -24,13 +24,14 @@ public class HomeFragment extends Fragment {
 
     private FragmentHomeBinding fhb;
     CreateProjectFragment cpf;
-
+    ProjectAdapter pa;
     public View onCreateView(
             @NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         fhb = FragmentHomeBinding.inflate(inflater, container, false);
-        cpf = new CreateProjectFragment();
+        
         fhb.projectHome.setLayoutManager(new LinearLayoutManager(getActivity()));
-        fhb.projectHome.setAdapter(new ProjectAdapter());
+        fhb.projectHome.setAdapter((pa=new ProjectAdapter()));
+        cpf = new CreateProjectFragment(pa);
         fhb.fab.setOnClickListener(
                 (v) -> {
                     cpf.show(getActivity().getSupportFragmentManager(), "dialog");

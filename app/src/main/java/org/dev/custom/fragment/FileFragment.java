@@ -32,7 +32,7 @@ public class FileFragment extends Fragment {
             @NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         ffb = FragmentFileBinding.inflate(inflater, container, false);
         ffb.projectFile.setLayoutManager(new LinearLayoutManager(getActivity()));
-        ffb.projectFile.setAdapter(new FileAdapter(new File(getActivity().getIntent().getStringExtra("projectPath"))));
+        ffb.projectFile.setAdapter(new FileAdapter(new File(getActivity().getIntent().getStringExtra("projectPath")),(EditorActivity)getActivity()));
         return ffb.getRoot();
     }
 

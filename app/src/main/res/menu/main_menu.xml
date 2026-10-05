@@ -3,6 +3,6 @@
 
     <item
         android:id="@+id/settings"
-        android:name="Settings" />
+        android:title="Settings" />
 
 </menu>

@@ -28,6 +28,9 @@
             <com.google.android.material.tabs.TabLayout
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent"
+                app:tabMode="scrollable"
+                app:tabGravity="start"
+                android:visibility="gone"
                 android:id="@+id/tab" />
         </com.google.android.material.appbar.AppBarLayout>
         <androidx.viewpager.widget.ViewPager

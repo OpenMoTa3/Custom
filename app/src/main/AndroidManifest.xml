@@ -37,5 +37,15 @@
         <activity
             android:name=".activity.EditorActivity"
             android:exported="true" />
+            <provider
+    android:name=".provider.DataProvider"
+    android:authorities="org.dev.custom.documents"
+    android:exported="true"
+    android:grantUriPermissions="true"
+    android:permission="android.permission.MANAGE_DOCUMENTS">
+    <intent-filter>
+        <action android:name="android.content.action.DOCUMENTS_PROVIDER" />
+    </intent-filter>
+</provider>
     </application>
 </manifest>

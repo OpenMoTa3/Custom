@@ -1,36 +1,21 @@
 {
   "allFiles": [
     {
-      "file": "/storage/emulated/0/CodeOnTheGoProjects/Custom/app/src/main/java/org/dev/custom/adapter/FileAdapter.java",
+      "file": "/storage/emulated/0/CodeOnTheGoProjects/Custom/app/src/main/AndroidManifest.xml",
       "selection": {
         "end": {
-          "column": 0,
-          "index": 0,
-          "line": 0
+          "column": 40,
+          "index": 1607,
+          "line": 40
         },
         "start": {
-          "column": 0,
-          "index": 0,
-          "line": 0
-        }
-      }
-    },
-    {
-      "file": "/storage/emulated/0/CodeOnTheGoProjects/Custom/app/src/main/res/layout/adapter_card_file.xml",
-      "selection": {
-        "end": {
-          "column": 0,
-          "index": 0,
-          "line": 0
-        },
-        "start": {
-          "column": 0,
-          "index": 0,
-          "line": 0
+          "column": 28,
+          "index": 1595,
+          "line": 40
         }
       }
     }
   ],
   "projectPath": "/storage/emulated/0/CodeOnTheGoProjects/Custom",
-  "selectedFile": "/storage/emulated/0/CodeOnTheGoProjects/Custom/app/src/main/res/layout/adapter_card_file.xml"
+  "selectedFile": "/storage/emulated/0/CodeOnTheGoProjects/Custom/app/src/main/AndroidManifest.xml"
 }

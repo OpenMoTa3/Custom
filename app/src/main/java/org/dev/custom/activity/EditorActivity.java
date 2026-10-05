@@ -9,11 +9,14 @@ import android.view.MenuItem;
 import android.view.View;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.PopupMenu;
 import androidx.drawerlayout.widget.DrawerLayout;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
+import com.google.android.material.tabs.TabLayout;
 import org.dev.custom.adapter.BottomPagerAdapter;
 import org.dev.custom.adapter.DrawerPagerAdapter;
 import org.dev.custom.adapter.OpenPagerAdapter;
+import org.dev.custom.build.CommadUtils;
 import org.dev.custom.databinding.ActivityEditorBinding;
 import android.os.Bundle;
 
@@ -25,6 +28,8 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 import org.dev.custom.R;
+import org.dev.custom.fragment.OpenFragment;
+import org.dev.custom.util.PathUtils;
 
 public class EditorActivity extends AppCompatActivity {
     ActivityEditorBinding aeb;
@@ -40,7 +45,6 @@ public class EditorActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.editor_menu, menu);
         return true;
     }
@@ -49,6 +53,13 @@ public class EditorActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem arg0) {
         int id = arg0.getItemId();
         if (id == R.id.settings) startActivity(new Intent(this, SettingsActivity.class));
+        if (id == R.id.play) {
+            CommadUtils cu = new CommadUtils();
+            cu.runCommand(
+                    new String[] {
+                         PathUtils.data + "/jre/bin/java", "--version"
+                    });
+        }
         return super.onOptionsItemSelected(arg0);
     }
 
@@ -113,5 +124,45 @@ public class EditorActivity extends AppCompatActivity {
         BottomSheetBehavior<View> bottomSheet = BottomSheetBehavior.from(aeb.bottomSheetLayout);
         bottomSheet.setPeekHeight(137);
         bottomSheet.setMaxHeight(2020);
+        aeb.tab.setOnTabSelectedListener(
+                new TabLayout.OnTabSelectedListener() {
+                    @Override
+                    public void onTabSelected(TabLayout.Tab t) {}
+
+                    @Override
+                    public void onTabReselected(TabLayout.Tab t) {
+                        PopupMenu pm = new PopupMenu(EditorActivity.this, t.view);
+                        pm.getMenu().add("关闭当前");
+                        pm.getMenu().add("关闭其他");
+                        pm.getMenu().add("关闭所有");
+                        pm.show();
+                        pm.setOnMenuItemClickListener(
+                                (v) -> {
+                                    OpenFragment ff =
+                                            (OpenFragment)
+                                                    opa.instantiateItem(
+                                                            aeb.pager, aeb.pager.getCurrentItem());
+                                    if (v.getTitle().equals("关闭当前")) {
+                                        opa.closeCurrentFile(ff.getOpenFile());
+                                    } else if (v.getTitle().equals("关闭其他")) {
+                                        opa.closeOtherFile(ff.getOpenFile());
+                                    } else {
+                                        opa.closeAllFile();
+                                    }
+                                    return false;
+                                });
+                    }
+
+                    @Override
+                    public void onTabUnselected(TabLayout.Tab t) {}
+                });
+    }
+
+    public OpenPagerAdapter getOpenPagerAdapter() {
+        return opa;
+    }
+
+    public ActivityEditorBinding getActivityEditorBinding() {
+        return this.aeb;
     }
 }
